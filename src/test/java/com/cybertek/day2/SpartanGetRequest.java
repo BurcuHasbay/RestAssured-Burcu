@@ -72,7 +72,7 @@ And Json body should contain fidole
 
         Assertions.assertEquals(200,response.statusCode());
 
-        Assertions.assertEquals(response.contentType(),"application/json");
+        Assertions.assertEquals("application/json",response.contentType());
 
         Assertions.assertTrue(response.body().asString().contains("Fidole"));
 
