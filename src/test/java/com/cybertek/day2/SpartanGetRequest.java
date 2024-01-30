@@ -3,6 +3,7 @@ package com.cybertek.day2;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class SpartanGetRequest {
@@ -34,6 +35,14 @@ And response body should include spartan result
 
     //Printing the whole body
      response.prettyPrint();
+
+     //How to API TESTING then???????
+    //Verify statusCode is 200 ok
+    Assertions.assertEquals(response.statusCode(),200);
+
+
+    //Verify Content Type is JSON
+    Assertions.assertEquals(response.contentType(),"application/json");
 
 
 }
