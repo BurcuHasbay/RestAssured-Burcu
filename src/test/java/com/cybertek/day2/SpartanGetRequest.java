@@ -88,7 +88,7 @@ Given no headers provided
 When Users sends GET request to /api/hello.
 Then response status code should be 200
 And Content type header should be "text/plain;charset=UTF-8"
-And header should contain dote
+And header should contain "Date"
 And Content-Length should be 17
 And body should be "Hello from Sparta"
      */
@@ -101,6 +101,11 @@ And body should be "Hello from Sparta"
         Assertions.assertEquals("text/plain;charset=UTF-8",response.contentType());
 
         //Verify we have headers named 'Date'
+        Assertions.assertTrue(response.headers().hasHeaderWithName("Date"));
+
+        //  HOW TO GET/RETRIEVE HEADER FROM RESPONSE USING HEADER KEY???
+        System.out.println("response.header(\"Content-Length\") = " + response.header("Content-Length"));
+        response.header("Date");
 
     }
 
