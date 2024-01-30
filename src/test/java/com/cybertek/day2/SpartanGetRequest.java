@@ -79,4 +79,46 @@ And Json body should contain fidole
     }
 
 
+    @DisplayName("GET Request to /api/hello")
+    @Test
+    public void test4(){
+
+    /*
+Given no headers provided
+When Users sends GET request to /api/hello.
+Then response status code should be 200
+And Content type header should be "text/plain;charset=UTF-8"
+And header should contain dote
+And Content-Length should be 17
+And body should be "Hello from Sparta"
+     */
+
+        //Send request and save response inside the response Object
+        Response response = RestAssured.when().get(baseUrl + "/api/hello");
+
+        Assertions.assertEquals(200,response.statusCode());
+
+        Assertions.assertEquals("text/plain;charset=UTF-8",response.contentType());
+
+        //Verify we have headers named 'Date'
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
