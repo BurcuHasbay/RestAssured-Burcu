@@ -43,12 +43,12 @@ And response body should include spartan result
 
 
     //Verify Content Type is JSON
-    Assertions.assertEquals(response.contentType(),"application/jsonq");
+    Assertions.assertEquals(response.contentType(),"application/json");
 
 
 }
 
-    @DisplayName("GET ONE SPARTAN /api/spartan/3")
+    @DisplayName("GET ONE SPARTAN /api/spartans/3")
     @Test
     public void test3(){
 
@@ -61,18 +61,20 @@ And response Content Type must be application/json 3
 And Json body should contain fidole
 
      */
-        Response response = RestAssured.given().accept(ContentType.JSON).when().get(baseUrl + "/api/spartan/3");
+        Response response = RestAssured.given().accept(ContentType.JSON).when().get(baseUrl + "/api/spartans/3");
 
         System.out.println("response.statusCode() = " + response.statusCode());
 
         System.out.println("response.contentType() = " + response.contentType());
+
+        response.prettyPrint();
 
 
         Assertions.assertEquals(response.statusCode(),200);
 
         Assertions.assertEquals(response.contentType(),"application/json");
 
-        Assertions.assertTrue(response.body().asString().contains("Fideole"));
+        Assertions.assertTrue(response.body().asString().contains("Fidole"));
 
     }
 
