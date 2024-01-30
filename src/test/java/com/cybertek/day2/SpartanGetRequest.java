@@ -70,7 +70,7 @@ And Json body should contain fidole
         response.prettyPrint();
 
 
-        Assertions.assertEquals(response.statusCode(),200);
+        Assertions.assertEquals(200,response.statusCode());
 
         Assertions.assertEquals(response.contentType(),"application/json");
 
