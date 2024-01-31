@@ -60,7 +60,8 @@ public class SpartansTest_withParameters {
         TASK
      Given accept type is Json
      And Id parameter value is 500
-     When user sends GET request to /api/spartans/{id} Then response status code should be 404
+     When user sends GET request to /api/spartans/{id}
+     Then response status code should be 404
      And response content-type: application/json
      And "Not Found" message should be in response payload
          */
@@ -68,6 +69,17 @@ public class SpartansTest_withParameters {
             Response response = given().accept(ContentType.JSON).
                     and().pathParam("id", 500).
                     get("/api/spartans/{id}");
+
+            //Verify status code
+            assertEquals(404,response.statusCode());
+
+            //Verify Content Type is application/json
+            assertEquals("application/json",response.contentType());
+
+            //Verify "Not Found" in the Json payload/body
+            assertTrue(response.body().asString().contains("Not Found"));
+
+
 
 
         }
