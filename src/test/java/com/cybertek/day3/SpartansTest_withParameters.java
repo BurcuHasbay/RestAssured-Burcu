@@ -42,6 +42,10 @@ public class SpartansTest_withParameters {
 
 
 
+             assertEquals(200,response.statusCode());
+             assertEquals("application/json",response.contentType());
+             assertTrue(response.body().asString().contains("Blythe"));
+
 
 
 
