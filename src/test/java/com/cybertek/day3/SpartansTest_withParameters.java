@@ -53,5 +53,26 @@ public class SpartansTest_withParameters {
 
         }
 
+        @DisplayName("GET request to /api/spartans/{id} NEGATIVE TEST")
+        @Test
+        public void test2(){
+            /*
+        TASK
+     Given accept type is Json
+     And Id parameter value is 500
+     When user sends GET request to /api/spartans/{id} Then response status code should be 404
+     And response content-type: application/json
+     And "Not Found" message should be in response payload
+         */
+
+            Response response = given().accept(ContentType.JSON).
+                    and().pathParam("id", 500).
+                    get("/api/spartans/{id}");
+
+
+        }
+
+
+
 }
 
