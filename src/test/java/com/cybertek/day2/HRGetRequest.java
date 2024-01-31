@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static io.restassured.RestAssured.*;
+
 public class HRGetRequest {
 
 
@@ -46,7 +48,7 @@ Json format and response body contoins Americas
 
         //If you want to see the format IN JSON, you need to tell this as below:
 
-        Response response = RestAssured.given().accept(ContentType.JSON).when().get("/regions/2");
+        Response response = given().accept(ContentType.JSON).when().get("/regions/2");
         //Verify Status Code
         Assertions.assertEquals(200,response.statusCode());
 
