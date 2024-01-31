@@ -100,7 +100,8 @@ public class SpartansTest_withParameters {
      And "Janette" should be in response payload
              */
 
-            Response response = given().accept(ContentType.JSON).and().
+            Response response = given().log().all().
+                    accept(ContentType.JSON).and().
                     queryParam("nameContains", "e")
                     .and().queryParam("gender", "Female")
                     .when().get("/api/spartans/search");
