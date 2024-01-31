@@ -20,9 +20,11 @@ public class SpartanNegative_GetTest {
 
     }
 
-
-
-
+    /*
+    Given accept type application/xml
+    When user sends GET Request to /api/spartans end point
+    Then response Content Type must be application/xml
+     */
 
 
 }
