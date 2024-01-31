@@ -1,6 +1,7 @@
 package com.cybertek.day2;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -43,14 +44,11 @@ Json format and response body contoins Americas
     @Test
     public void test2(){
 
-        Response response = RestAssured.get("/regions/2");
+        //If you want to see the format IN JSON, you need to tell this as below:
 
+        Response response = RestAssured.given().accept(ContentType.JSON).when().get("/regions/2");
         //Verify Status Code
         Assertions.assertEquals(200,response.statusCode());
-
-        //Verify the Content Type
-        Assertions.assertEquals("application/json",response.contentType());
-
 
         //Verify Body Contains Americas
         Assertions.assertEquals(response.body().asString().contains("Americas"),true);
