@@ -84,7 +84,7 @@ public class SpartansTest_withParameters {
 
         @DisplayName("GET request to api/spartans/search with QUERY PARAMS")
         @Test
-        public void test2(){
+        public void test3(){
 
             /*
      Given-accept type is Json
