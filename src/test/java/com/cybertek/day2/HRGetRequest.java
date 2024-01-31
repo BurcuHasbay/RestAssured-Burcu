@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class HRGetRequest {
 
@@ -50,10 +51,10 @@ Json format and response body contoins Americas
 
         Response response = given().accept(ContentType.JSON).when().get("/regions/2");
         //Verify Status Code
-        Assertions.assertEquals(200,response.statusCode());
+        assertEquals(200,response.statusCode());
 
         //Verify Body Contains Americas
-        Assertions.assertEquals(response.body().asString().contains("Americas"),true);
+        assertTrue(response.body().asString().contains("Americas"));
 
 
     }
