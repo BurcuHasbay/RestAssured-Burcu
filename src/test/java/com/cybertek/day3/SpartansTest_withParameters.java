@@ -95,7 +95,7 @@ public class SpartansTest_withParameters {
 
      When user sends GET request to /api/spartans/search
      Then response status code should be 200
-     And response content-type: application/json
+     And response content-type: "application/json"
      And "Female" should be in response payload
      And "Janette" should be in response payload
              */
@@ -104,6 +104,11 @@ public class SpartansTest_withParameters {
                     queryParam("nameContains", "e")
                     .and().queryParam("gender", "Female")
                     .when().get("/api/spartans/search");
+
+
+            assertEquals(200,response.statusCode());
+
+            assertEquals("application/json",response.contentType());
 
 
 
