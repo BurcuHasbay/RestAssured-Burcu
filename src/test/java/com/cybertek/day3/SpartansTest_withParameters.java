@@ -41,9 +41,11 @@ public class SpartansTest_withParameters {
                     get("/api/spartans/{id}");
 
 
-
+            //verify status code
              assertEquals(200,response.statusCode());
+             //verify Content Type
              assertEquals("application/json",response.contentType());
+             //Verify "Blythe" name in the Json Payload = body
              assertTrue(response.body().asString().contains("Blythe"));
 
 
