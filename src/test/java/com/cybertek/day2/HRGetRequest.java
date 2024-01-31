@@ -30,7 +30,7 @@ public class HRGetRequest {
 
         //You can just add the "endpoint". You don't have to write the
         //whole IP address
-        Response response = get("/regions");
+        Response response = RestAssured.get("/regions");
 
         System.out.println(response.statusCode());
 
