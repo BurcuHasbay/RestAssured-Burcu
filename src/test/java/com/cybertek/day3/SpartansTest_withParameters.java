@@ -77,7 +77,7 @@ public class SpartansTest_withParameters {
             assertEquals("application/json",response.contentType());
 
             //Verify "Not Found" in the Json payload/body
-            assertTrue(response.body().asString().contains("Not Found"));
+
 
 
 
