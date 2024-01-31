@@ -105,7 +105,11 @@ And body should be "Hello from Sparta"
 
         //  HOW TO GET/RETRIEVE HEADER FROM RESPONSE USING HEADER KEY???
         System.out.println("response.header(\"Content-Length\") = " + response.header("Content-Length"));
-        response.header("Date");
+        System.out.println("response.header(\"Date\") = " + response.header("Date"));
+
+        Assertions.assertEquals("17", response.header("Content-Length"));
+
+        Assertions.assertEquals("Hello from Sparta",response.body().asString());
 
     }
 
