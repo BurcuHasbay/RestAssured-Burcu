@@ -110,7 +110,9 @@ public class SpartansTest_withParameters {
 
             assertEquals("application/json",response.contentType());
 
+            assertTrue(response.body().asString().contains("Female"));
 
+            assertTrue(response.body().asString().contains("Janette"));
 
 
         }
