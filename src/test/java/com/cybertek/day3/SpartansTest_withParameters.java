@@ -117,5 +117,19 @@ public class SpartansTest_withParameters {
 
 
         }
+
+    @DisplayName("GET request to api/spartans/search with QUERY PARAMS (MAP")
+    @Test
+    public void test4(){
+
+
+
+
+
+
+    }
+
+
+
 }
 
