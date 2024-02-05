@@ -41,6 +41,11 @@ public class ORDS_ApiTest_withPATH extends HR_Test_Base {
         System.out.println("secondCountryName = " + secondCountryName);
 
 
+        //PRINT "http://54.158.33.169:1000/ords/hr/countries/CA"
+        String CALink = response.path("items[2].links[0].href");
+        System.out.println("CALink = " + CALink);
+
+
     }
 
 
