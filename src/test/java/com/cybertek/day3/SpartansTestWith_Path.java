@@ -89,6 +89,8 @@ phone is 3312820936
         System.out.println("firstId = " + firstId);
 
 
+        String name = response.path("name[0]");
+        System.out.println("name = " + name);
 
 
     }
