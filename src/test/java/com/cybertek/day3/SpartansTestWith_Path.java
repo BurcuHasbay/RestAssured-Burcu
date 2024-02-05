@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static io.restassured.RestAssured.baseURI;
 
 import static io.restassured.RestAssured.*;
@@ -96,6 +98,15 @@ phone is 3312820936
         String lastFirstName = response.path("name[-1]");
         System.out.println("lastFirstName = " + lastFirstName);
 
+
+        //SAVE THE NAMES inside THE LIST OF STRING
+        List<String>names= response.path("name");
+        //TO PRINT EACH OF THEM ONE BY ONE
+        for (String n : names) {
+            System.out.println(n);
+        }
+
+        }
 
 
 
