@@ -6,6 +6,8 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.*;
 public class ORDS_ApiTest_withPATH extends HR_Test_Base {
@@ -44,6 +46,20 @@ public class ORDS_ApiTest_withPATH extends HR_Test_Base {
         //PRINT "http://54.158.33.169:1000/ords/hr/countries/CA"
         String CALink = response.path("items[2].links[0].href");
         System.out.println("CALink = " + CALink);
+
+        //GET ME ALL COUNTRY NAMES
+        List<String> countryNames = response.path("items.country_name");
+        System.out.println("countryNames = " + countryNames);
+
+        //ASSERT THAT ALL REGIONS IDS ARE EQUAL TO 2.
+        List<Integer> allRegionsIDs= response.path("items.region_id");
+        for (Integer eachRegionId : allRegionsIDs) {
+
+            System.out.println("eachRegionId = " + eachRegionId);
+            assertEquals(2,eachRegionId);
+
+
+        }
 
 
     }
