@@ -4,7 +4,9 @@ import org.junit.jupiter.api.BeforeAll;
 
 import static io.restassured.RestAssured.baseURI;
 
-public class HR_Test_Base {
+public abstract class HR_Test_Base {
+
+    //We make this class abstract because we can create object from this base class
 
     @BeforeAll
     public static void init() {
