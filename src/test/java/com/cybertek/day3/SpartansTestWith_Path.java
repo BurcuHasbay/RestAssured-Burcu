@@ -78,7 +78,20 @@ phone is 3312820936
 
     @DisplayName("GET all spartans and NAVIGATE with PATH Params")
     @Test
-    public
+    public void test2(){
+
+        Response response = given().accept(ContentType.JSON).when().get("/api/spartans");
+
+       // response.prettyPrint();
+
+        //TO GET THE FIRST ID
+        int firstId = response.path("id[0]");
+        System.out.println("firstId = " + firstId);
+
+
+
+
+    }
 
 
 
