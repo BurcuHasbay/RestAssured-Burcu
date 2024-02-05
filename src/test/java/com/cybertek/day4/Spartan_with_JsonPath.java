@@ -45,9 +45,20 @@ phone is 3312820936
         System.out.println(response.path("name").toString());
 
         //ASSIGNING RESPONSE TO JsonPATH
+
         //You are taking response body and putting it into JsonPath Object
+        //Why? BECAUSE it has some features and is easy to manage jSon file
         JsonPath jsonPath = response.jsonPath();
 
+        int id = jsonPath.getInt("id");
+        String name = jsonPath.getString("name");
+        String gender = jsonPath.getString("gender");
+        long phone = jsonPath.getLong("phone");
+
+        System.out.println("id = " + id);
+        System.out.println("name = " + name);
+        System.out.println("gender = " + gender);
+        System.out.println("phone = " + phone);
 
 
 
