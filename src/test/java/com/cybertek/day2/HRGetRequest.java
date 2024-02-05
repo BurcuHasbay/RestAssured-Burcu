@@ -43,7 +43,7 @@ public class HRGetRequest {
 Json format and response body contoins Americas
  */
 
-    @DisplayName("GET Request to /gesions/2")
+    @DisplayName("GET Request to /regions/2")
     @Test
     public void test2(){
 
