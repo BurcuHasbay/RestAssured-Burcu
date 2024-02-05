@@ -78,9 +78,9 @@ public class ORDS_ApiTest_withPATH extends HR_Test_Base {
 
         //MAKE SURE WE HAVE ONLY IT_PROG AS A JOB ID
         List<String>allJobIDs=response.path("items.job_id");
-        System.out.println("allJobIDs = " + allJobIDs);
 
         for (String eachJobId : allJobIDs) {
+            System.out.println("eachJobId = " + eachJobId);
             assertEquals("IT_PROG",eachJobId);
 
         }
