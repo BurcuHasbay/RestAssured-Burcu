@@ -36,6 +36,10 @@ public class ORDS_ApiTest_withPATH extends HR_Test_Base {
         String firstCountryID = response.path("item[0].country_id");
         System.out.println("firstCountryID = " + firstCountryID);
 
+        //PRINT THE SECOND COUNTRY NAME
+        String secondCountryName = response.path("item[1].country_name");
+        System.out.println("secondCountryName = " + secondCountryName);
+
 
     }
 
