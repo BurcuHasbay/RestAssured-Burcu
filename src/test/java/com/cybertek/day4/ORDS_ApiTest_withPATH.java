@@ -30,14 +30,14 @@ public class ORDS_ApiTest_withPATH extends HR_Test_Base {
 
         //PRINT 'HASMORE'
         //JUST GIVE THE KEY
-        System.out.println("response.path(\"hasmore\") = " + response.path("hasmore"));
+        System.out.println("response.path(\"hasMore\") = " + response.path("hasMore"));
 
         //PRINT FIRST COUNTRY ID
-        String firstCountryID = response.path("item[0].country_id");
+        String firstCountryID = response.path("items[0].country_id");
         System.out.println("firstCountryID = " + firstCountryID);
 
         //PRINT THE SECOND COUNTRY NAME
-        String secondCountryName = response.path("item[1].country_name");
+        String secondCountryName = response.path("items[1].country_name");
         System.out.println("secondCountryName = " + secondCountryName);
 
 
