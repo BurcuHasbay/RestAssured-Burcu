@@ -33,9 +33,10 @@ public class ORDS_API_with_JsonPath extends HR_Test_Base {
         List<String> allCountriesId = jsonPath.getList("items.country_id");
         System.out.println("allCountriesId = " + allCountriesId);
 
-
-
-
+        //GET ALL THE COUNTRY NAMES WITH REGION IDs THAT IS EQUAL TO 2
+        //One SHot way
+        List<String> countryNameWithRegionId2 = jsonPath.getList("items.findAll{it.region_id==2}.country_name");
+        System.out.println("countryNameWithRegionId2 = " + countryNameWithRegionId2);
 
     }
 
