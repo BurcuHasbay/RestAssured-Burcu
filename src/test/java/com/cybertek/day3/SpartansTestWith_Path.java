@@ -76,6 +76,19 @@ phone is 3312820936
     }
 
 
+    @DisplayName("GET all spartans and NAVIGATE with PATH Params")
+    @Test
+    public
+
+
+
+
+
+
+
+
+
+
 
 
 
