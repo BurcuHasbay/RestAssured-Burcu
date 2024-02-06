@@ -23,6 +23,15 @@ public class HamcrestMatchers_Intro {
     //OR
     assertThat(5+5,not(equalTo(9)));
 
+    //Number comparison
+    //greaterThan
+    //greaterThanOrEqualTo
+    //lessThan
+    //lessThanOrEqualTo
+
+    assertThat(5+5,is(greaterThan(9)));
+
+
 
 
 
