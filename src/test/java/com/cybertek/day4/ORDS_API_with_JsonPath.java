@@ -65,6 +65,10 @@ public class ORDS_API_with_JsonPath extends HR_Test_Base {
             System.out.println("firstNameMore10000 = " + firstNameMore10000);
 
 
+            //GET ME THE NAME OF THE PERSON WHOSE SALARY IS THE MAX
+
+            String MaxSalaryFirstName = jsonPath.getString("items.max{it.salary}.first_name");
+            System.out.println("MaxSalaryFirstName = " + MaxSalaryFirstName);
 
 
         }
