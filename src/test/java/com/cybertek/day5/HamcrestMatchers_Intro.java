@@ -56,7 +56,8 @@ public class HamcrestMatchers_Intro {
         //Now do it in a case insensitive manner
         assertThat(text,startsWithIgnoringCase("b22"));
 
-
+        //Check if it ends with .... or not
+        assertThat(text,endsWith("Hamcrest"));
 
 
 
