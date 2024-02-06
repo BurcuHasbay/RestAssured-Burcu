@@ -16,6 +16,8 @@ public class HamcrestMatchers_Intro {
 
     assertThat(5+5,equalTo(10));
 
+    assertThat(5+5,is(equalTo(10)));
+
 
 
 
