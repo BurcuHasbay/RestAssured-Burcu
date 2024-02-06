@@ -59,6 +59,11 @@ public class HamcrestMatchers_Intro {
         //Check if it ends with .... or not
         assertThat(text,endsWith("Hamcrest"));
 
+        //Check a word in the middle of the text
+        assertThat(text,containsString("learning"));
+        //with ignoring case sensitivity
+        assertThat(text,containsStringIgnoringCase("LEARNING"));
+
 
 
 
