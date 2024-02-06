@@ -53,7 +53,7 @@ public class HamcrestMatchers_Intro {
         //CHECK IF THIS TEXT STARTS WITH B22
         assertThat(text,startsWith("B22"));
 
-        //Now do it in a case insensitive manner
+        //Now do it in a case-insensitive manner
         assertThat(text,startsWithIgnoringCase("b22"));
 
         //Check if it ends with .... or not
