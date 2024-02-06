@@ -64,7 +64,11 @@ public class HamcrestMatchers_Intro {
         //with ignoring case sensitivity
         assertThat(text,containsStringIgnoringCase("LEARNING"));
 
+        String str = "  ";
 
+        //TO CHECK if trimmed string is empty string
+        //TRIM IT THEN CHECK IF IT IS EMPTY
+        assertThat(str.trim(),emptyString());
 
 
 
