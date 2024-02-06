@@ -40,4 +40,43 @@ public class ORDS_API_with_JsonPath extends HR_Test_Base {
 
     }
 
+
+        @DisplayName("GET request to /employees with query param")
+        @Test
+        public void test2(){
+
+            Response response = given().queryParam("limit", 107).when().get("/employees");
+
+
+            //GET ME ALL THE EMAILS OF THE EMPLOYEES WHO ARE CURRENTLY WORKING AS
+            //IT_PROG
+
+            //create the JsonPath OBJECT FIRST TO SAVE THE FEATURES IN THE
+            //JSONPATH OBJECT,EASIER TO MANAGE YOU KNOW
+
+            JsonPath jsonPath = response.jsonPath();
+
+            List<Object> employeeITPROGs = jsonPath.getList("items.findAll{it.job_id==\"IT_PROG\"}.email");
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
