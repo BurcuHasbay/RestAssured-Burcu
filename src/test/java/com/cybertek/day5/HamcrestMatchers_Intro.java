@@ -10,7 +10,11 @@ public class HamcrestMatchers_Intro {
 
 @Test
     public void simpleTest1(){
+
+    //look for the equality
     assertThat(5+5, is(10));
+
+    assertThat(5+5,equalTo(10));
 
 
 
