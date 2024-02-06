@@ -18,6 +18,10 @@ public class HamcrestMatchers_Intro {
 
     assertThat(5+5,is(equalTo(10)));
 
+    //HOW IS THE NEGATIVE VERSION OF IT?
+    assertThat(5+5,is(not(equalTo(9))));
+    //OR
+    assertThat(5+5,not(equalTo(9)));
 
 
 
