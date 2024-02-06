@@ -2,12 +2,14 @@ package com.cybertek.day5;
 
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 public class HamcrestMatchers_Intro {
 
+    @DisplayName("Assertion with Numbers")
 @Test
     public void simpleTest1(){
 
@@ -31,10 +33,31 @@ public class HamcrestMatchers_Intro {
 
     assertThat(5+5,is(greaterThan(9)));
 
-
-
-
-
 }
+
+    @DisplayName("Assertion with String")
+    @Test
+    public void stringHamcrest(){
+
+        //Checking for equality is same as numbers
+
+        String text = "822 is learning Hamcrest";
+
+        assertThat(text,is("822 is learning Hamcrest"));
+
+        assertThat(text,equalTo("822 is learning Hamcrest"));
+
+        assertThat(text,is(equalTo("822 is learning Hamcrest")));
+
+
+
+
+
+
+
+
+
+
+    }
 
 }
