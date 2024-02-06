@@ -57,10 +57,9 @@ public class ORDS_API_with_JsonPath extends HR_Test_Base {
             JsonPath jsonPath = response.jsonPath();
 
             List<Object> employeeITPROGs = jsonPath.getList("items.findAll{it.job_id==\"IT_PROG\"}.email");
-
+            System.out.println("employeeITPROGs = " + employeeITPROGs);
 
         }
-
 
 
 
