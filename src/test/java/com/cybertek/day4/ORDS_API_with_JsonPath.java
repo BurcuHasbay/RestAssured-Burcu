@@ -62,7 +62,7 @@ public class ORDS_API_with_JsonPath extends HR_Test_Base {
             //GET ME THE FIRST NAME OF THE EMPLOYEES WHO MAKE MORE THAN 10000
             List<Object> firstNameMore10000 = jsonPath.getList("items.findAll{it.salary>=10000}.first_name");
 
-            System.out.println("firstNameMore10000 = " + firstNameMore10000);
+
 
 
         }
