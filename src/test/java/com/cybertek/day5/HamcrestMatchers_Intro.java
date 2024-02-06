@@ -41,16 +41,20 @@ public class HamcrestMatchers_Intro {
 
         //Checking for equality is same as numbers
 
-        String text = "822 is learning Hamcrest";
+        String text = "B22 is learning Hamcrest";
 
-        assertThat(text,is("822 is learning Hamcrest"));
+        assertThat(text,is("B22 is learning Hamcrest"));
 
-        assertThat(text,equalTo("822 is learning Hamcrest"));
+        assertThat(text,equalTo("B22 is learning Hamcrest"));
 
-        assertThat(text,is(equalTo("822 is learning Hamcrest")));
+        assertThat(text,is(equalTo("B22 is learning Hamcrest")));
 
 
+        //CHECK IF THIS TEXT STARTS WITH B22
+        assertThat(text,startsWith("B22"));
 
+        //Now do it in a case insensitive manner
+        assertThat(text,startsWithIgnoringCase("b22"));
 
 
 
