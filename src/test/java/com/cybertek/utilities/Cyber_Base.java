@@ -10,7 +10,7 @@ public abstract class Cyber_Base {
     public static void init(){
         //Save BASE URL inside this variable so that we don't have to type http method every single time
 
-        baseURI = "api.training.cydeo.com/";
+        baseURI = "https://api.training.cydeo.com/";
 
 
     }
