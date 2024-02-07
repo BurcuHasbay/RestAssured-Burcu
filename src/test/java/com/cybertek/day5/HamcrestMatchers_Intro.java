@@ -5,6 +5,9 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 public class HamcrestMatchers_Intro {
@@ -75,5 +78,35 @@ public class HamcrestMatchers_Intro {
 
 
     }
+
+    @DisplayName("Hamcrest for Collection")
+    @Test
+    public void testCollection(){
+        List<Integer>listOfNumbers = Arrays.asList(1,4,5,6,32,54,66,77,45,23);
+
+        //CHECK IF THE list HAS SIZE OF (estimated number)
+        assertThat(listOfNumbers,hasSize(9));
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
