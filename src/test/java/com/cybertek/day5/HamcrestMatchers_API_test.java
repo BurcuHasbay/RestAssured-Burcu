@@ -30,6 +30,9 @@ public class HamcrestMatchers_API_test extends SpartanTEst_Base {
             .and().pathParam("id",15)
             .when()
                   .get("/api/spartans/{id}")
+            //REQUEST PART
+            //------------------------------------
+            //RESPONSE PART
             .then()
                    .statusCode(200).
             and().
