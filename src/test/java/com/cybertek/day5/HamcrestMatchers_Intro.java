@@ -87,6 +87,9 @@ public class HamcrestMatchers_Intro {
         //CHECK IF THE list HAS SIZE OF (estimated number)
         assertThat(listOfNumbers,hasSize(10));
 
+        //HOW CAN YOU VERIFY NUMBER 77 IS INSIDE THE LIST
+        assertThat(listOfNumbers,hasItem(77));
+
     }
 
 
