@@ -1,4 +1,5 @@
 package com.cybertek.day5;
+import com.cybertek.utilities.Cyber_Base;
 import com.cybertek.utilities.SpartanTEst_Base;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;
@@ -7,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
-public class HamcrestMatchers_API_test extends SpartanTEst_Base {
+public class HamcrestMatchers_API_test extends Cyber_Base {
 
 @DisplayName("One Spartan with HAMCREST and Chaining")
     @Test
