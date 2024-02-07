@@ -45,7 +45,7 @@ public class HamcrestMatchers_API_test extends SpartanTEst_Base {
 
 }
 
-        @DisplayName("")
+        @DisplayName("HamcrestMatcher and Chaining")
         @Test
         public void test2(){
 /*
