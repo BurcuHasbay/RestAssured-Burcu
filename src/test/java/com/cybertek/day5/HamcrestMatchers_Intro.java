@@ -90,6 +90,9 @@ public class HamcrestMatchers_Intro {
         //HOW CAN YOU VERIFY NUMBER 77 IS INSIDE THE LIST
         assertThat(listOfNumbers,hasItem(77));
 
+        //HOW CAN YOU VERIFY THAT MORE THAN ONE NUMBER IS INSIDE THE LIST?
+        //FOR EXAMPLE >>>> (77,5,23)
+        assertThat(listOfNumbers,hasItems(77,5,23));
     }
 
 
