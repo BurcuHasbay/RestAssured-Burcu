@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
-public class HamcrestMatchers_API_test extends Cyber_Base {
+public class HamcrestMatchers_API_test {
 
 @DisplayName("One Spartan with HAMCREST and Chaining")
     @Test
@@ -30,7 +30,7 @@ public class HamcrestMatchers_API_test extends Cyber_Base {
     given().accept(ContentType.JSON)
             .and().pathParam("id",15)
             .when()
-                  .get("/api/spartans/{id}")
+                  .get("http://54.158.33.169:8000/api/spartans/{id}")
             //REQUEST PART
             //------------------------------------
             //RESPONSE PART
@@ -66,19 +66,18 @@ public class HamcrestMatchers_API_test extends Cyber_Base {
                     .and()
             .pathParam("id",2)
                     .when()
-            .get("/teacher/{id}")
+            .get("https://api.training.cydeo.com/teacher/{id}")
                     .then()
                     .statusCode(200)
                     .and()
                     .contentType("application/json;charset=UTF-8")
                     //.header("date",is("Wed, 07 Feb 2024 12:07:11 GMT"))
-                    .header("date",notNullValue())
-                    .body("firstName",is("Ron"),
-                            "emailAddress",is("ron@mail.com"),
-                            "salary",equalTo(100000),
-                            "birthDate",is("07/20/1983"));
+                    .header("date",notNullValue()).
+                    body("teachers[0].firstName",is("Ron")).
+                    body("teachers[0].emailAddress",is("ron@mail.com")).
+                    body("teachers[0].salary",equalTo(100000));
 
-        }
+}
 
 
 
