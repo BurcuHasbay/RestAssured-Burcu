@@ -85,7 +85,7 @@ public class HamcrestMatchers_Intro {
         List<Integer>listOfNumbers = Arrays.asList(1,4,5,6,32,54,66,77,45,23);
 
         //CHECK IF THE list HAS SIZE OF (estimated number)
-        assertThat(listOfNumbers,hasSize(9));
+        assertThat(listOfNumbers,hasSize(10));
 
     }
 
