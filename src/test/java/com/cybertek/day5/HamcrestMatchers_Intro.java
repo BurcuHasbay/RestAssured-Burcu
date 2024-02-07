@@ -70,6 +70,8 @@ public class HamcrestMatchers_Intro {
         //TRIM IT THEN CHECK IF IT IS EMPTY
         assertThat(str.trim(),emptyString());
 
+        //Check if str above is blank
+        assertThat(str,blankString());
 
 
     }
