@@ -43,14 +43,41 @@ public class HamcrestMatchers_API_test extends SpartanTEst_Base {
                     "phone",is(1938695106));
 
 
-
-
-
-
-
-
 }
 
+        @DisplayName("")
+        @Test
+        public void test2(){
+/*
+    teacher id is 2
+    status code 200
+    content type Json
+    Response content type is application/json;charset=UTF-8
+                "emailAddress": "ron@mail.com",
+            "firstName": "Ron",
+            "salary": 100000,
+            "birthDate": "07/20/1983",
+
+   VERIFY current date in RESPONSE HEADERS is Wed, 07 Feb 2024 12:07:11 GMT
+     */
+
+            given().accept(ContentType.JSON)
+                    .and()
+            .pathParam("id",2)
+                    .when()
+            .get("/teacher/{id}")
+                    .then()
+                    .statusCode(200)
+                    .and()
+                    .contentType("application/json;charset=UTF-8")
+                    //.header("date",is("Wed, 07 Feb 2024 12:07:11 GMT"))
+                    .header("date",notNullValue())
+                    .body("firstName",is("Ron"),
+                            "emailAddress",is("ron@mail.com"),
+                            "salary",equalTo(100000),
+                            "birthDate",is("07/20/1983"));
+
+        }
 
 
 
