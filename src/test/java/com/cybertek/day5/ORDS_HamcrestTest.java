@@ -42,8 +42,28 @@ public class ORDS_HamcrestTest extends HR_Test_Base {
             .body("items.job_id",everyItem(equalTo("IT_PROG")))
             .body("items.first_name",containsInRelativeOrder("Alexander", "Bruce", "David", "Valli", "Diana"))
             .body("items.email",containsInAnyOrder("AHUNOLD","BERNST","DAUSTIN","VPATABAL","DLORENTZ"))
-            .body("items.first_name",equalToObject(names));
+            .body("items.first_name",equalToObject(names));  //Equality of the list assertion
+
+
     }
 
+
+        @DisplayName("")
+        @Test
+        public void employeesTest2(){
+
+        //WE WANT TO MAKE IT CHAIN AND GET THE RESPONSE OBJECT AT THE SAME TIME
+
+            given().accept(ContentType.JSON)
+                    .and().queryParam("q","{\"job_id\":\"IT_PROG\"}")
+                    .when()
+                    .get("/employees")
+                    .then()
+                    .statusCode(200)
+                    //JUST LIKE LOOP
+                    .body("items.job_id",everyItem(equalTo("IT_PROG")));
+
+
+        }
 
 }
