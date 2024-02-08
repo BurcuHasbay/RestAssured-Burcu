@@ -65,6 +65,9 @@ public class ORDS_HamcrestTest extends HR_Test_Base {
                     .body("items.job_id", everyItem(equalTo("IT_PROG"))).extract()
                     .response();
 
+            //LET'S PRINT THE RESPONSE BODY
+            response.prettyPrint();
+
 
 
 
