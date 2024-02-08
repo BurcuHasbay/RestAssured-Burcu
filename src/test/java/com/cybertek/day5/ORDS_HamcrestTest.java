@@ -2,7 +2,9 @@ package com.cybertek.day5;
 
 import com.cybertek.utilities.HR_Test_Base;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -54,7 +56,7 @@ public class ORDS_HamcrestTest extends HR_Test_Base {
 
         //WE WANT TO MAKE IT CHAIN AND GET THE RESPONSE OBJECT AT THE SAME TIME
 
-            Response response = given().accept(ContentType.JSON)
+            JsonPath jsonPath = given().accept(ContentType.JSON)
                     .and().queryParam("q", "{\"job_id\":\"IT_PROG\"}")
                     .when()
                     .get("/employees")
@@ -62,12 +64,9 @@ public class ORDS_HamcrestTest extends HR_Test_Base {
                     .statusCode(200)
                     //JUST LIKE LOOP
                     .body("items.job_id", everyItem(equalTo("IT_PROG"))).extract()
-                    .response();
+                    .jsonPath();
 
-            //LET'S PRINT THE RESPONSE BODY
-            response.prettyPrint();
-
-
+            assertThat(jsonPath.getList("items.first_name"),hasSize(5));
 
 
         }
