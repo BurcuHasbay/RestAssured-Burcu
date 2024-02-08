@@ -70,7 +70,7 @@ public class ORDS_HamcrestTest extends HR_Test_Base {
             assertThat(jsonPath.getList("items.first_name"),hasSize(5));
 
             //ASSERT FIRSTNAMES ORDER
-            assertThat(jsonPath.getList("items.first_name"),containsInRelativeOrder("AHUNOLD","BERNST","DAUSTIN","VPATABAL","DLORENTZ"));
+            assertThat(jsonPath.getList("items.email"),containsInRelativeOrder("AHUNOLD","BERNST","DAUSTIN","VPATABAL","DLORENTZ"));
 
 
         }
