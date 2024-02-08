@@ -41,7 +41,7 @@ public class ORDS_HamcrestTest extends HR_Test_Base {
             //TO GET THE NAMES DIRECTLY
             .body("items.job_id",everyItem(equalTo("IT_PROG")))
             .body("items.first_name",containsInRelativeOrder("Alexander", "Bruce", "David", "Valli", "Diana"))
-            .body("items.email",containsInAnyOrder("AHUNOLD","BERNST","DAUSTIN","VPATABAL","DLORENTZ",))
+            .body("items.email",containsInAnyOrder("AHUNOLD","BERNST","DAUSTIN","VPATABAL","DLORENTZ"))
             .body("items.first_name",equalToObject(names));
     }
 
