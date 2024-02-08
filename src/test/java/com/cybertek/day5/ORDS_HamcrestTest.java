@@ -66,7 +66,11 @@ public class ORDS_HamcrestTest extends HR_Test_Base {
                     .body("items.job_id", everyItem(equalTo("IT_PROG"))).extract()
                     .jsonPath();
 
+            //TO MAKE SURE THAT, WE HAVE ONLY 5 FIRST NAMES
             assertThat(jsonPath.getList("items.first_name"),hasSize(5));
+
+            //ASSERT FIRSTNAMES ORDER
+            assertThat(jsonPath.getList("items.first_name"),containsInRelativeOrder("AHUNOLD","BERNST","DAUSTIN","VPATABAL","DLORENTZ"));
 
 
         }
