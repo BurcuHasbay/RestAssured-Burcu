@@ -36,4 +36,15 @@ public class JSON_to_Java_Test extends SpartanTEst_Base {
     }
 
 
+    @DisplayName("GET all the spartans to JAVA data structure")
+    @Test
+    public void getAllSpartans(){
+
+        Response response = get("/api/spartans").then().statusCode(200).extract().response();
+
+
+
+
+    }
+
 }
