@@ -2,6 +2,7 @@ package com.cybertek.day5;
 
 import com.cybertek.utilities.SpartanTEst_Base;
 import io.restassured.response.Response;
+import org.apache.http.conn.util.DnsUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +24,11 @@ public class JSON_to_Java_Test extends SpartanTEst_Base {
 
         //GET THE JSON and then CONVERT it to the MAP !!
 
-        Map<String,Object> jsonMap = response.as(Map.class);
+        Map<String,Object>jsonMap = response.as(Map.class);
+        System.out.println(jsonMap);
+
+        String actualNama = (String) jsonMap.get("name");
+        assertThat(actualNama,is("Meta"));
 
 
     }
