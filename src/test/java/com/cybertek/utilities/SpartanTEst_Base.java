@@ -12,6 +12,10 @@ public abstract class SpartanTEst_Base {
         //Save BASE URL inside this variable so that we don't have to type http method every single time
         RestAssured.baseURI = "http://54.158.33.169:8000";
 
+        String dbUrl = "jdbc:oracle:thin:@54.158.33.169:1521:XE";
+        String dbUsername = "SP";
+        String dbPassword = "SP";
+
     }
 
 }
