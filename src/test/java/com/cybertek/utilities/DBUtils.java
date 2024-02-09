@@ -12,7 +12,10 @@ public class DBUtils {
     private static Statement statement;
     private static ResultSet resultSet;
 
-    public static void createConnection(String dbUrl,String dbUsername,String dbPassword) {
+    public static void createConnection() {
+        String dbUrl = "jdbc:oracle:thin:@54.158.33.169:1521:XE";
+        String dbUsername = "hr";
+        String dbPassword = "hr";
         try {
             connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
         } catch (SQLException e) {
@@ -21,10 +24,8 @@ public class DBUtils {
         }
     }
 
-    public static void createConnection() {
-        String dbUrl = "jdbc:oracle:thin:@54.158.33.169:1521:XE";
-        String dbUsername = "hr";
-        String dbPassword = "hr";
+    public static void createConnection(String dbUrl,String dbUsername,String dbPassword) {
+
         try {
             connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
         } catch (SQLException e) {
