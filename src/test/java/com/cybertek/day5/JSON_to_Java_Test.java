@@ -52,6 +52,13 @@ public class JSON_to_Java_Test extends SpartanTEst_Base {
 
         List<Map<String,Object>> jsonList = response.as(List.class);
 
+        System.out.println(jsonList.get(1).get("name"));
+
+        //To get individual spartan for example : spartan 3
+
+        Map<String,Object> spartan3 = jsonList.get(2);
+        System.out.println(spartan3);
+
 
     }
 
