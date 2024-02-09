@@ -6,6 +6,7 @@ import org.apache.http.conn.util.DnsUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -43,7 +44,13 @@ public class JSON_to_Java_Test extends SpartanTEst_Base {
         //shortest way for the get request and then save inside the response
         Response response = get("/api/spartans").then().statusCode(200).extract().response();
 
+        //THis time, put this response inside the one data structure
+        //the result looks like a map inside each object
+        //for one Json Object, we use ONE MAP
+        //for MULTIPLE Json Objects, we use LIST OF MAP
+        // we need to convert Json to JAVA which is deserialization
 
+        List<Map<String,Object>> jsonList = response.as(List.class);
 
 
     }
