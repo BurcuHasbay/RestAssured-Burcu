@@ -40,6 +40,7 @@ public class JSON_to_Java_Test extends SpartanTEst_Base {
     @Test
     public void getAllSpartans(){
 
+        //shortest way for the get request and then save inside the response
         Response response = get("/api/spartans").then().statusCode(200).extract().response();
 
 
