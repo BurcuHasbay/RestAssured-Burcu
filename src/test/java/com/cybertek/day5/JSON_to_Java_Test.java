@@ -50,12 +50,15 @@ public class JSON_to_Java_Test extends SpartanTEst_Base {
         //for MULTIPLE Json Objects, we use LIST OF MAP
         // we need to convert Json to JAVA which is deserialization
 
+        //WHERE YOU DO CONVERSION IS API
+        //THI IS API
         List<Map<String,Object>> jsonList = response.as(List.class);
 
         System.out.println(jsonList.get(1).get("name"));
 
         //To get individual spartan for example : spartan 3
 
+        //THIS IS JAVA
         Map<String,Object> spartan3 = jsonList.get(2);
         System.out.println(spartan3);
 
