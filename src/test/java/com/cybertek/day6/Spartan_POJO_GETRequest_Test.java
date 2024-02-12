@@ -31,6 +31,9 @@ Then create convert one spartan Object from spartanClass
             .statusCode(200).contentType("application/json")
             .extract().response();
 
+    //Deserialize <<>> JSON TO POJO (JAVA CUSTOM CLASS)
+    //2 DIFFERENT WAYS FOR THIS
+    //1.USING as() METHOD
 
 
 
