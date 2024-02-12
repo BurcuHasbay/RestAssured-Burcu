@@ -55,9 +55,9 @@ public class SpartanAPI_vs_DB extends SpartanTEst_Base {
         //******DATABASE IS ALWAYS THE EXPECTED VALUE*******
 
         assertThat(apiMap.get("id"), is(dbMap.get("SPARTAN_ID")));
-        assertThat(apiMap.get("name"),is(dbMap.get("name")));
-        assertThat(apiMap.get("gender"),is(dbMap.get("gender")));
-        assertThat(apiMap.get("phone"),is(dbMap.get("phone")));
+        assertThat(apiMap.get("name"),is(dbMap.get("NAME")));
+        assertThat(apiMap.get("gender"),is(dbMap.get("GENDER")));
+        assertThat(apiMap.get("phone"),is(dbMap.get("PHONE")));
 
 
 
