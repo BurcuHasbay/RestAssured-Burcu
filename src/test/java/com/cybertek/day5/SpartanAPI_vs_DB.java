@@ -48,6 +48,16 @@ public class SpartanAPI_vs_DB extends SpartanTEst_Base {
 
         System.out.println(apiMap);
 
+        //Now it's time to compare api info with database info
+        //EVEN IF THE VALUES ARE THE SAME, KEYS COULD BE DIFFERENT
+        //IF WE ARE NOT INSERTING ANY INFO FROM UI, WHICH COULD BE EXPECTED
+        //WHICH COULD BE ACTUAL?
+        //******DATABASE IS ALWAYS THE EXPECTED VALUE*******
+
+        assertThat();
+
+
+
 
     }
 
