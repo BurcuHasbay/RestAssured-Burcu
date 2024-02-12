@@ -21,7 +21,6 @@ public abstract class SpartanTEst_Base {
         //NOW THAT YOU OPENED THE CONNECTION
         //YOU NEED TO CLOSE IT AS WELL.
 
-
     }
 
     @AfterAll
