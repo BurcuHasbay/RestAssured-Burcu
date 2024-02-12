@@ -1,5 +1,6 @@
 package com.cybertek.day6;
 
+import com.cybertek.Pojos.Spartan;
 import com.cybertek.utilities.SpartanTEst_Base;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -34,9 +35,10 @@ Then create convert one spartan Object from spartanClass
     //Deserialize <<>> JSON TO POJO (JAVA CUSTOM CLASS)
     //2 DIFFERENT WAYS FOR THIS
     //1.USING as() METHOD
-
-
-
+    Spartan SP15 = response.as(Spartan.class);
+    System.out.println(SP15);
+    System.out.println("SP15.getId() = " + SP15.getId());
+    System.out.println("SP15.getGender() = " + SP15.getGender());
 
 
 }
