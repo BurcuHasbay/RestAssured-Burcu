@@ -35,12 +35,16 @@ public class SpartanAPI_vs_DB extends SpartanTEst_Base {
 
         //2-GET THE DATA FROM THE API
         Map <String,Object> apiMap = given().accept(ContentType.JSON).pathParam("id", 15)
-                .when()
+                  .when()
                 .get("/api/spartans/{id}")
-                .then()
+                   .then()
                 .statusCode(200)
                 .contentType("application/json")
                 .extract().response().as(Map.class);
+
+        //OR YOU CAN TURN IT INTI RESPONSE BODY TYPE INSTEAD OF MAP,
+        //THEN YOU CAN PUT THE "RESPONSE" INSIDE THE MAP
+        //Map<String,Object> apiMap = response.as(Map.class);
 
         System.out.println(apiMap);
 
