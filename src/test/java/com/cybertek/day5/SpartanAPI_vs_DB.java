@@ -42,6 +42,7 @@ public class SpartanAPI_vs_DB extends SpartanTEst_Base {
                 .contentType("application/json")
                 .extract().response().as(Map.class);
 
+        System.out.println(apiMap);
 
 
     }
