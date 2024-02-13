@@ -64,7 +64,7 @@ Then create convert one spartan Object from spartanClass
      */
 
         JsonPath jsonPath = given().accept(ContentType.JSON).and()
-                .queryParam("nameContains", "a",
+                .queryParams("nameContains", "a",
                         "gender", "Male")
                 .when()
                 .get("/api/spartans/search")
@@ -76,9 +76,6 @@ Then create convert one spartan Object from spartanClass
         Spartan spartan1 = jsonPath.getObject("content[0]", Spartan.class);
 
         System.out.println(spartan1);
-        System.out.println("spartan1.getName() = " + spartan1.getName());
-        System.out.println("spartan1.getGender() = " + spartan1.getGender());
-
 
     }
 
