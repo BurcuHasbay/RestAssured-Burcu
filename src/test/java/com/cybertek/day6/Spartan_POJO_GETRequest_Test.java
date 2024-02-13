@@ -3,6 +3,7 @@ package com.cybertek.day6;
 import com.cybertek.Pojos.Spartan;
 import com.cybertek.utilities.SpartanTEst_Base;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -40,8 +41,18 @@ Then create convert one spartan Object from spartanClass
     System.out.println("SP15.getId() = " + SP15.getId());
     System.out.println("SP15.getGender() = " + SP15.getGender());
 
+    //2nd Way for deserialization to custom class
+    JsonPath jsonPath = response.jsonPath();
+    Spartan s15 = jsonPath.getObject("",Spartan.class);
+
+    System.out.println(s15);
+    System.out.println("s15.getName() = " + s15.getName());
+
+
 
 }
+
+
 
 
 
