@@ -9,6 +9,8 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
@@ -103,7 +105,22 @@ Then create convert one spartan Object from spartanClass
 
 
     }
+    @DisplayName("GET /spartans/search and save as List<Spartan>")
+    @Test
+    public void test4(){
+        List<Spartan> listOfSpartans = given().accept(ContentType.JSON).and()
+                .queryParams("nameContains", "a",
+                        "gender", "Male")
+                .when()
+                .get("/api/spartans/search")
+                .then()
+                .statusCode(200)
+                .extract().jsonPath().getList("content", Spartan.class);
 
+
+
+
+    }
 
 
 
