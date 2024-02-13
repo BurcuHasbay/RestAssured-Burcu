@@ -29,7 +29,7 @@ public class ORDS_POJO_GetRequest_Test extends HR_Test_Base {
 
         System.out.println(R1);
         System.out.println("R1.getRegion_name() = " + R1.getRegion_name());
-        System.out.println("R1.getRegion_id() = " + R1.getRegion_id());
+        System.out.println("R1.getRegion_id() = " + R1.getRegionId());
         System.out.println("R1.getLinks().get(0).getHref() = " + R1.getLinks().get(0).getHref());
 
 
