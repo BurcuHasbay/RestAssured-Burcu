@@ -117,7 +117,7 @@ Then create convert one spartan Object from spartanClass
                 .statusCode(200)
                 .extract().jsonPath().getList("content", Spartan.class);
 
-
+        System.out.println(listOfSpartans.get(1));
 
 
     }
