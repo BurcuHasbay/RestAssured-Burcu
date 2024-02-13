@@ -47,7 +47,8 @@ Then create convert one spartan Object from spartanClass
 
     System.out.println(s15);
     System.out.println("s15.getName() = " + s15.getName());
-
+    System.out.println("s15.getGender() = " + s15.getGender());
+    System.out.println("s15.getPhone() = " + s15.getPhone());
 
 
 }
