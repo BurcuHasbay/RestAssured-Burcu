@@ -1,5 +1,6 @@
 package com.cybertek.day6;
 
+import com.cybertek.Pojos.SearchForSpartan;
 import com.cybertek.Pojos.Spartan;
 import com.cybertek.utilities.SpartanTEst_Base;
 import io.restassured.http.ContentType;
@@ -84,7 +85,24 @@ Then create convert one spartan Object from spartanClass
     }
 
 
+    @Test
+    public void testSearchClass(){
 
+        Response response = given().accept(ContentType.JSON).and()
+                .queryParams("nameContains", "a",
+                        "gender", "Male")
+                .when()
+                .get("/api/spartans/search")
+                .then()
+                .statusCode(200)
+                .extract().response();
+
+        SearchForSpartan searchResult = response.as(SearchForSpartan.class);
+
+        System.out.println(searchResult.getContent().get(0).getName());
+
+
+    }
 
 
 
