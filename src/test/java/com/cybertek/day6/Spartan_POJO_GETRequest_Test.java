@@ -60,11 +60,27 @@ Then create convert one spartan Object from spartanClass
     /*
     /spartans/search?nameContains=a§gender=Male
     send get request to endpoint above and save first object with
-    type SpartanPOJO
+    type Spartan POJO
      */
 
+        JsonPath jsonPath = given().accept(ContentType.JSON).and()
+                .queryParam("nameContains", "a",
+                        "gender", "Male")
+                .when()
+                .get("/api/spartans/search")
+                .then()
+                .statusCode(200)
+                .extract().jsonPath();
 
-}
+        //GET THE first Spartan From Content and PUT inside Spartan Object
+        Spartan spartan1 = jsonPath.getObject("content[0]", Spartan.class);
+
+        System.out.println(spartan1);
+        System.out.println("spartan1.getName() = " + spartan1.getName());
+        System.out.println("spartan1.getGender() = " + spartan1.getGender());
+
+
+    }
 
 
 
