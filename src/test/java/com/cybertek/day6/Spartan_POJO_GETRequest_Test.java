@@ -43,6 +43,8 @@ Then create convert one spartan Object from spartanClass
 
     //2nd Way for deserialization to custom class
     JsonPath jsonPath = response.jsonPath();
+    /* converted our json response to POJO class
+     which is our custom class that we created for Spartan */
     Spartan s15 = jsonPath.getObject("",Spartan.class);
 
     System.out.println(s15);
@@ -53,7 +55,16 @@ Then create convert one spartan Object from spartanClass
 
 }
 
+    @Test
+    public void spartanSearchWithPOJO(){
+    /*
+    /spartans/search?nameContains=a§gender=Male
+    send get request to endpoint above and save first object with
+    type SpartanPOJO
+     */
 
+
+}
 
 
 
