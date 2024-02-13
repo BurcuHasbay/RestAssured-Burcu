@@ -76,6 +76,10 @@ Then create convert one spartan Object from spartanClass
         Spartan spartan1 = jsonPath.getObject("content[0]", Spartan.class);
 
         System.out.println(spartan1);
+        System.out.println("spartan1.getName() = " + spartan1.getName());
+        System.out.println("spartan1.getId() = " + spartan1.getId());
+        System.out.println("spartan1.getGender() = " + spartan1.getGender());
+
 
     }
 
