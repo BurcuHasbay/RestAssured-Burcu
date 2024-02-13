@@ -1,6 +1,6 @@
 package com.cybertek.Pojos;
 
-public class Link_ords {
+public class Link {
 
 private String rel;
 private String href;
@@ -24,7 +24,7 @@ private String href;
 
     @Override
     public String toString() {
-        return "Link_ords{" +
+        return "Link{" +
                 "rel='" + rel + '\'' +
                 ", href='" + href + '\'' +
                 '}';
