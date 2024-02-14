@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
+@Getter
+@Setter
+@ToString
 public class Employee {
 
-    @Getter
-    @Setter
-    @ToString
+
 
     @JsonProperty("first_name")
     private String firstNAme;
