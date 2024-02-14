@@ -13,7 +13,9 @@ import java.util.List;
 public class Region {
     @JsonProperty("region_id")
     private int regionId;
+    @JsonProperty("region_name")
     private String region_name;
+    @JsonProperty("links")
     private List<Link> links;
 
 
