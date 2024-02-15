@@ -10,6 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -98,8 +99,13 @@ first 4 values to do verification, how can you only get 4 values
             regionsIds.add(region.getRegionId());
             regionsNames.add(region.getRegion_name());
         }
+        //TO COMPARE THE RESULT WITH THE EXPECTED RESULT,CREATE EXPECTED EMPTY LIST
 
+        List<Integer> expectedRegionsIds = Arrays.asList(1, 2, 3, 4);
+        List<String> expectedRegionsNames= Arrays.asList("Europe","Americas","Asia","iddle East and Africa");
 
+        assertThat(regionsIds,is(expectedRegionsIds));
+        assertThat(regionsNames,is(expectedRegionsNames));
     }
 
 
