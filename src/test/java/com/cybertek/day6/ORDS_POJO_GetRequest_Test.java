@@ -3,10 +3,14 @@ package com.cybertek.day6;
 import com.cybertek.Pojos.Employee;
 import com.cybertek.Pojos.Link;
 import com.cybertek.Pojos.Region;
+import com.cybertek.Pojos.Regions;
 import com.cybertek.utilities.HR_Test_Base;
 import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -77,8 +81,23 @@ first 4 values to do verification, how can you only get 4 values
     @Test
     public void region4PojoTest(){
 
-        Region regions = get("/regions").then().statusCode(200).contentType("application/json")
-                .extract().as(Region.class);
+        Regions regions = get("/regions").then().statusCode(200).contentType("application/json")
+                .extract().response().as(Regions.class);
+
+        //List of regions is equal to 4
+        assertThat(regions.getCount(),is(equalTo(4)));
+
+        //NEED TO FILL IN THE EMPTY LISTS
+        List<String> regionsNames = new ArrayList<>();
+        List<Integer> regionsIds = new ArrayList<>();
+
+        List<Region> items = regions.getItems();
+        //
+        //Loop through each region, save their ids and names in the empty lists
+        for (Region region : items) {
+            regionsIds.add(region.getRegionId());
+            regionsNames.add(region.getRegion_name());
+        }
 
 
     }
