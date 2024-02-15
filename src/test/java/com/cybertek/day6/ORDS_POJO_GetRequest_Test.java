@@ -57,8 +57,7 @@ first 4 values to do verification, how can you only get 4 values
                 .extract().jsonPath().getObject("items[0]", Employee.class);
 
 
-
-
+        System.out.println(employee1);
 
 
     }
