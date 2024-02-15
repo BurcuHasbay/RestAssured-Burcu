@@ -1,9 +1,11 @@
 package com.cybertek.day6;
 
+import com.cybertek.Pojos.Employee;
 import com.cybertek.Pojos.Link;
 import com.cybertek.Pojos.Region;
 import com.cybertek.utilities.HR_Test_Base;
 import io.restassured.path.json.JsonPath;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -35,4 +37,31 @@ public class ORDS_POJO_GetRequest_Test extends HR_Test_Base {
 
 
     }
+
+    /*
+SCENARIO:
+You have json which has a lot of keys and values, but you just need
+first 4 values to do verification, how can you only get 4 values
+ randomly (doesn't matter which value) and ignore the rest of them.
+
+ */
+
+    @DisplayName("GET request to /employees and only get a few of the values as POJO class")
+    @Test
+    public void employeeGet(){
+
+        Employee employee1
+                = get("/employees").then()
+                .statusCode(200)
+                .contentType("application/json")
+                .extract().jsonPath().getObject("items[0]", Employee.class);
+
+
+
+
+
+
+    }
+
+
 }
