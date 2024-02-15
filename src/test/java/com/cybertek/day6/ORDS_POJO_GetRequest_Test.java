@@ -102,7 +102,7 @@ first 4 values to do verification, how can you only get 4 values
         //TO COMPARE THE RESULT WITH THE EXPECTED RESULT,CREATE EXPECTED EMPTY LIST
 
         List<Integer> expectedRegionsIds = Arrays.asList(1, 2, 3, 4);
-        List<String> expectedRegionsNames= Arrays.asList("Europe","Americas","Asia","iddle East and Africa");
+        List<String> expectedRegionsNames= Arrays.asList("Europe","Americas","Asia","Middle East and Africa");
 
         assertThat(regionsIds,is(expectedRegionsIds));
         assertThat(regionsNames,is(expectedRegionsNames));
