@@ -63,4 +63,27 @@ first 4 values to do verification, how can you only get 4 values
     }
 
 
+    /*
+    // SEND A GET REQUEST TO REGIONS
+    //VERIFY THAT REGION IDs ARE 1,2,3,4
+    //VERIFY THAT REGIONS' NAMES ARE Europe,Americas,Asia,Middle East and
+    Africa
+    //VERIFY THAT TOTAL IS 4
+    TRY TO USE POJO AS MUCH AS POSSIBLE
+    IGNORE NON-USED FIELDS
+     */
+
+    @DisplayName("Get request to /regions and verify id numbers and regions' names and total 4,ignore the rest")
+    @Test
+    public void region4PojoTest(){
+
+        Region regions = get("/regions").then().statusCode(200).contentType("application/json")
+                .extract().as(Region.class);
+
+
+    }
+
+
+
+
 }
