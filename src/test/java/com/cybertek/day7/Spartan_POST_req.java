@@ -1,5 +1,6 @@
 package com.cybertek.day7;
 
+import com.cybertek.Pojos.Spartan;
 import com.cybertek.utilities.SpartanTEst_Base;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -105,10 +106,14 @@ We are sending only Json body NOT any params
                 = new LinkedHashMap<>();
         requestJsonMap.put("name","Dudley");
         requestJsonMap.put("gender","Male");
-        requestJsonMap.put("phone"," 8877444975");
+        requestJsonMap.put("phone"," 887744497");
 
-    //--HOW CAN I CREATE SPARTAN API without API
-
+    //--HOW CAN I CREATE SPARTAN OBJECT API without API
+        //set those info inside this
+        Spartan spartan = new Spartan();
+        spartan.setName("Rubeus");
+        spartan.setGender("Male");
+        spartan.setPhone(887744497);
 
 
 
