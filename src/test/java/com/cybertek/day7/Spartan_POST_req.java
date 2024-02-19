@@ -36,10 +36,11 @@ We are sending only Json body NOT any params
     public void postMethod(){
 
         String requestJsonBody = "{\n" +
-                "    \"gender\": \"Male\",\n" +
-                "    \"name\": \"Severus\",\n" +
-                "    \"phone\": 99949330313563\n" +
-                "}";
+                "            \"id\": 2,\n" +
+                "            \"name\": \"Dolores\",\n" +
+                "            \"gender\": \"Female\",\n" +
+                "            \"phone\": 42189555448\n" +
+                "        }";
 
 
         Response response = given().accept(ContentType.JSON).and()
