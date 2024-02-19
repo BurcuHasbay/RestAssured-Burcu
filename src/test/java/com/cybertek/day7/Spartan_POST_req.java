@@ -100,13 +100,7 @@ We are sending only Json body NOT any params
     @Test
     public void postMethod3() {
 
-        //CREATE A MAP TO KEEP REQUEST JSON BODY INFORMATION
-        //TO STORE
-        Map<String, Object> requestJsonMap
-                = new LinkedHashMap<>();
-        requestJsonMap.put("name", "Dudley");
-        requestJsonMap.put("gender", "Male");
-        requestJsonMap.put("phone", 3584128232L);
+    //  CREATE AN OBJECT WITH YOUR POJO CLASS AND SEND IT AS A JSON
 
         Spartan spartanO = new Spartan();
         spartanO.setName("Dudley");
