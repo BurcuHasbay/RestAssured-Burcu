@@ -95,5 +95,38 @@ We are sending only Json body NOT any params
 
     }
 
+    @DisplayName("POST with MAP to Spartan")
+    @Test
+    public void postMethod3(){
 
+        //CREATE A MAP TO KEEP REQUEST JSON BODY INFORMATION
+        //TO STORE
+        Map<String,Object> requestJsonMap
+                = new LinkedHashMap<>();
+        requestJsonMap.put("name","Dudley");
+        requestJsonMap.put("gender","Male");
+        requestJsonMap.put("phone"," 8877444975");
+
+    //--HOW CAN I CREATE SPARTAN API without API
+
+
+
+
+        Response response = given().accept(ContentType.JSON).and()
+                .contentType(ContentType.JSON)
+                .body(requestJsonMap).log().all()
+                .when()
+                .post("/api/spartans");
+
+
+        assertThat(response.statusCode(),is(201));
+        assertThat(response.contentType(),is("application/json"));
+
+        String expectedResponseMessage = "A Spartan is Born!";
+
+        assertThat(response.path("success"),is(expectedResponseMessage));
+
+        response.prettyPrint();
+
+    }
 }
