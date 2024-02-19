@@ -39,7 +39,7 @@ We are sending only Json body NOT any params
  */
 
     @Test
-    public void postMethod(){
+    public void postMethod() {
 
         String requestJsonBody = "{\n" +
                 "            \"id\": 2,\n" +
@@ -56,27 +56,27 @@ We are sending only Json body NOT any params
                 .post("/api/spartans");
 
 
-        assertThat(response.statusCode(),is(201));
-        assertThat(response.contentType(),is("application/json"));
+        assertThat(response.statusCode(), is(201));
+        assertThat(response.contentType(), is("application/json"));
 
         String expectedResponseMessage = "A Spartan is Born!";
 
-        assertThat(response.path("success"),is(expectedResponseMessage));
+        assertThat(response.path("success"), is(expectedResponseMessage));
 
 
     }
 
     @DisplayName("POST with MAP to JSON")
     @Test
-    public void postMethod2(){
+    public void postMethod2() {
 
         //CREATE A MAP TO KEEP REQUEST JSON BODY INFORMATION
         //TO STORE
-        Map<String,Object> requestJsonMap
+        Map<String, Object> requestJsonMap
                 = new LinkedHashMap<>();
-        requestJsonMap.put("name","Dudley");
-        requestJsonMap.put("gender","Male");
-        requestJsonMap.put("phone"," 8877444975");
+        requestJsonMap.put("name", "Dudley");
+        requestJsonMap.put("gender", "Male");
+        requestJsonMap.put("phone", 887744497);
 
         Response response = given().accept(ContentType.JSON).and()
                 .contentType(ContentType.JSON)
@@ -85,53 +85,51 @@ We are sending only Json body NOT any params
                 .post("/api/spartans");
 
 
-        assertThat(response.statusCode(),is(201));
-        assertThat(response.contentType(),is("application/json"));
+        assertThat(response.statusCode(), is(201));
+        assertThat(response.contentType(), is("application/json"));
 
         String expectedResponseMessage = "A Spartan is Born!";
 
-        assertThat(response.path("success"),is(expectedResponseMessage));
+        assertThat(response.path("success"), is(expectedResponseMessage));
 
         response.prettyPrint();
 
     }
 
-    @DisplayName("POST with MAP to Spartan")
+    @DisplayName("POST with MAP to JSON")
     @Test
-    public void postMethod3(){
+    public void postMethod3() {
 
         //CREATE A MAP TO KEEP REQUEST JSON BODY INFORMATION
         //TO STORE
-        Map<String,Object> requestJsonMap
+        Map<String, Object> requestJsonMap
                 = new LinkedHashMap<>();
-        requestJsonMap.put("name","Dudley");
-        requestJsonMap.put("gender","Male");
-        requestJsonMap.put("phone"," 887744497");
+        requestJsonMap.put("name", "Dudley");
+        requestJsonMap.put("gender", "Male");
+        requestJsonMap.put("phone", 3584128232L);
 
-    //--HOW CAN I CREATE SPARTAN OBJECT API without API
-        //set those info inside this
-        Spartan spartan = new Spartan();
-        spartan.setName("Rubeus");
-        spartan.setGender("Male");
-        spartan.setPhone(887744497);
-
-
+        Spartan spartanO = new Spartan();
+        spartanO.setName("Dudley");
+        spartanO.setGender("Male");
+        spartanO.setPhone(3584128232L);
 
         Response response = given().accept(ContentType.JSON).and()
                 .contentType(ContentType.JSON)
-                .body(requestJsonMap).log().all()
+                .body(spartanO).log().all()
                 .when()
                 .post("/api/spartans");
 
 
-        assertThat(response.statusCode(),is(201));
-        assertThat(response.contentType(),is("application/json"));
+        assertThat(response.statusCode(), is(201));
+        assertThat(response.contentType(), is("application/json"));
 
         String expectedResponseMessage = "A Spartan is Born!";
 
-        assertThat(response.path("success"),is(expectedResponseMessage));
+        assertThat(response.path("success"), is(expectedResponseMessage));
 
         response.prettyPrint();
 
+
     }
+
 }

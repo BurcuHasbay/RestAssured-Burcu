@@ -20,7 +20,7 @@ import lombok.ToString;
 @ToString
 public class Spartan {
 
-private String name;
+    private String name;
 
     private String gender;
 
