@@ -3,7 +3,12 @@ package com.cybertek.day7;
 import com.cybertek.utilities.SpartanTEst_Base;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
@@ -60,7 +65,35 @@ We are sending only Json body NOT any params
 
     }
 
+    @DisplayName("POST with MAP to JSON")
+    @Test
+    public void postMethod2(){
 
+        //CREATE A MAP TO KEEP REQUEST JSON BODY INFORMATION
+        //TO STORE
+        Map<String,Object> requestJsonMap
+                = new LinkedHashMap<>();
+        requestJsonMap.put("name","Dudley");
+        requestJsonMap.put("gender","Male");
+        requestJsonMap.put("phone"," 8877444975");
+
+        Response response = given().accept(ContentType.JSON).and()
+                .contentType(ContentType.JSON)
+                .body(requestJsonMap).log().all()
+                .when()
+                .post("/api/spartans");
+
+
+        assertThat(response.statusCode(),is(201));
+        assertThat(response.contentType(),is("application/json"));
+
+        String expectedResponseMessage = "A Spartan is Born!";
+
+        assertThat(response.path("success"),is(expectedResponseMessage));
+
+        response.prettyPrint();
+
+    }
 
 
 }
