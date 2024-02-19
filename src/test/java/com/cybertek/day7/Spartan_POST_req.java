@@ -96,7 +96,7 @@ We are sending only Json body NOT any params
 
     }
 
-    @DisplayName("POST with MAP to JSON")
+    @DisplayName("POST with MAP to SPARTAN CLASS")
     @Test
     public void postMethod3() {
 
@@ -134,5 +134,58 @@ We are sending only Json body NOT any params
     Then use your method for creating spartan as a map, dynamically
 
     */
+
+    @DisplayName("POST with MAP to SPARTAN CLASS")
+    @Test
+    public void postMethod4() {
+
+        //  CREATE AN OBJECT WITH YOUR POJO CLASS AND SEND IT AS A JSON
+
+        Spartan spartanO = new Spartan();
+        spartanO.setName("Dudley");
+        spartanO.setGender("Male");
+        spartanO.setPhone(3584128232L);
+
+        //HOW CAN I MAKE SURE THAT I POSTED SOMETHING SUCCESSFULLY!?
+        //WHEN YOU GET THE ID AFTER POSTING A NEW SPARTAN
+        //USE THIS id SEPARATELY (as a request)
+
+
+        String expectedResponseMessage = "A Spartan is Born!";
+
+        int idFromPost = given().accept(ContentType.JSON).and()
+                .contentType(ContentType.JSON)
+                .body(spartanO).log().all()
+                .when()
+                .post("/api/spartans")
+                .then().
+                statusCode(201).
+                contentType("application/json").
+                body("success", is(expectedResponseMessage))
+                .extract().jsonPath().getInt("data.id");
+
+        //Above, you see a verified body
+        // EXTRACT ID VALUE AND SAVE INTO integer VARIABLE
+
+        System.out.println("idFromPost = " + idFromPost);
+
+        //NOW IT'S TIME TO MAKE IT DYNAMIC
+
+        //SEND A GET REQUEST TO id
+        Spartan postedSpartan = given().accept(ContentType.JSON).and()
+                .pathParam("id", idFromPost)
+                .when().get("/api/spartans/{id}")
+                .then().statusCode(200).extract().as(Spartan.class);
+
+        assertThat(postedSpartan.getName(),is(spartanO.getName()));
+        assertThat(postedSpartan.getGender(),is(spartanO.getGender()));
+        assertThat(postedSpartan.getPhone(),is(spartanO.getPhone()));
+        assertThat(postedSpartan.getId(),is(spartanO.getId()));
+
+
+    }
+
+
+
 
 }
