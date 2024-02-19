@@ -126,4 +126,13 @@ We are sending only Json body NOT any params
 
     }
 
+    /*
+    CREATE one spartanUtil class
+    Create a static method that returns Map<String,Object>
+    Use Faker library to assign each information
+    -----for Name, Gender, PhoneNumber
+    Then use your method for creating spartan as a map, dynamically
+
+    */
+
 }
