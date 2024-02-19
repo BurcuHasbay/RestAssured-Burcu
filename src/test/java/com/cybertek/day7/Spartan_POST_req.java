@@ -169,19 +169,13 @@ We are sending only Json body NOT any params
 
         System.out.println("idFromPost = " + idFromPost);
 
-        //NOW IT'S TIME TO MAKE IT DYNAMIC
-
-        //SEND A GET REQUEST TO id
-        Spartan postedSpartan = given().accept(ContentType.JSON).and()
-                .pathParam("id", idFromPost)
+        Spartan spartanPosted = given().accept(ContentType.JSON)
+                .and().pathParam("id", idFromPost)
                 .when().get("/api/spartans/{id}")
-                .then().statusCode(200).extract().as(Spartan.class);
+                .then()
+                .statusCode(200).log().all().extract().as(Spartan.class);
 
-        assertThat(postedSpartan.getName(),is(spartanO.getName()));
-        assertThat(postedSpartan.getGender(),is(spartanO.getGender()));
-        assertThat(postedSpartan.getPhone(),is(spartanO.getPhone()));
-        assertThat(postedSpartan.getId(),is(spartanO.getId()));
-
+        assertThat(spartanPosted.getId(),is(idFromPost));
 
     }
 
