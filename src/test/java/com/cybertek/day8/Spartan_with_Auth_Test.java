@@ -6,7 +6,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
 
 public class Spartan_with_Auth_Test extends Spartan_AuthTESTBase {
@@ -51,5 +50,25 @@ public class Spartan_with_Auth_Test extends Spartan_AuthTESTBase {
 
 
     }
+
+    @DisplayName("DELETE /api/spartans/{id} as an editor expecting 403")
+    @Test
+    public void testEditorDelete(){
+
+    given()
+            .auth().basic("editor","editor")
+            .and().accept(ContentType.JSON)
+            .pathParam("id",79)
+            .when()
+            .delete("/api/spartans/{id}")
+            .then()
+            .statusCode(403)
+            .log().all();
+
+//Expected result
+
+    }
+
+
 
 }
