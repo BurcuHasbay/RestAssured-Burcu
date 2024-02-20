@@ -65,7 +65,16 @@ public class Spartan_with_Auth_Test extends Spartan_AuthTESTBase {
             .statusCode(403)
             .log().all();
 
-//Expected result
+     //As an editor, you are not allowed to
+        // delete any spartan, that's why the status code was 403
+        // as expected
+        /*
+        "timestamp": "2024-02-20T12:35:03.281+0000",
+    "status": 403,
+    "error": "Forbidden",
+    "message": "Forbidden",
+    "path": "/api/spartans/79"
+         */
 
     }
 
