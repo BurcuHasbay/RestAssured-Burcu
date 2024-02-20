@@ -14,7 +14,11 @@ public class Spartan_with_Auth_Test extends Spartan_AuthTESTBase {
     @Test
     public void test1(){
 
+//shortest way just for the get request right away
 
+    get("/api/spartans")
+            .then().statusCode(401)
+            .log().all();
 
 
 
