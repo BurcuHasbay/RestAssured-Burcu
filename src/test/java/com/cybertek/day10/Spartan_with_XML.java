@@ -52,7 +52,12 @@ public class Spartan_with_XML extends Spartan_AuthTESTBase {
          //get response xml body/payload and SAve inside the xmlPath Object
          XmlPath xmlPath = response.xmlPath();
 
+         String name = xmlPath.getString("List.item[0].name");
+         System.out.println("name = " + name);
 
+         int id = xmlPath.getInt("List.item[2].id");
+
+         System.out.println("id = " + id);
 
      }
 
