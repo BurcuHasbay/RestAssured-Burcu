@@ -8,6 +8,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
@@ -58,6 +60,10 @@ public class Spartan_with_XML extends Spartan_AuthTESTBase {
          int id = xmlPath.getInt("List.item[2].id");
 
          System.out.println("id = " + id);
+
+         //HOW TO GET ALL NAMES AND SAVE INSIDE LIST OF STRING
+         List<String> listNames = xmlPath.getList("List.items.name");
+         System.out.println(listNames);
 
      }
 
