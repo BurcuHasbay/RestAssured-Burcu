@@ -55,16 +55,36 @@ public class jsonSchemaValidation_test extends Spartan_AuthTESTBase {
                 //.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("GetAllSpartansSchema.json"))
 
 
+    }
 
 
+    @DisplayName("Post request to /api/spartans endpoint and verify Schema")
+    @Test
+    public void PostSpartanSchemaTest(){
 
+        String requestJsonBody = "{\n" +
+                "    \"gender\": \"Female\",\n" +
+                "    \"name\": \"ShieldMaiden\",\n" +
+                "    \"phone\": 3276428826\n" +
+                "}";
 
-
-
-
-
+        given().accept(ContentType.JSON).and()
+                .contentType(ContentType.JSON)
+                .and().auth().basic("admin","admin")
+                .and().body(requestJsonBody).log().all()
+                .when().post("/api/spartans")
+                .then()
+                .statusCode(201)
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("PostSpartanSchema.json"))
+                .log().all();
 
     }
+
+
+
+
+
+
 
 
 }
