@@ -34,7 +34,9 @@
           "title": "The id Schema",
           "examples": [
             116
-          ]
+          ],
+          "minimum": 1,
+          "maximum": 100000
         },
         "name": {
           "type": "string",
@@ -42,7 +44,9 @@
           "title": "The name Schema",
           "examples": [
             "ShieldMaiden"
-          ]
+          ],
+          "minLength": 2,
+          "maxLength": 15
         },
         "gender": {
           "type": "string",
@@ -50,7 +54,8 @@
           "title": "The gender Schema",
           "examples": [
             "Female"
-          ]
+          ],
+          "pattern": "^(Male|Female)$"
         },
         "phone": {
           "type": "integer",
