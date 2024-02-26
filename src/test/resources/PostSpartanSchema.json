@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "success",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "string",
+      "default": "",
+      "title": "The success Schema",
+      "examples": [
+        "A Spartan is Born!"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "default": {},
+      "title": "The data Schema",
+      "required": [
+        "id",
+        "name",
+        "gender",
+        "phone"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "default": 0,
+          "title": "The id Schema",
+          "examples": [
+            116
+          ]
+        },
+        "name": {
+          "type": "string",
+          "default": "",
+          "title": "The name Schema",
+          "examples": [
+            "ShieldMaiden"
+          ]
+        },
+        "gender": {
+          "type": "string",
+          "default": "",
+          "title": "The gender Schema",
+          "examples": [
+            "Female"
+          ]
+        },
+        "phone": {
+          "type": "integer",
+          "default": 0,
+          "title": "The phone Schema",
+          "examples": [
+            3276428826
+          ]
+        }
+      },
+      "examples": [{
+        "id": 116,
+        "name": "ShieldMaiden",
+        "gender": "Female",
+        "phone": 3276428826
+      }]
+    }
+  },
+  "examples": [{
+    "success": "A Spartan is Born!",
+    "data": {
+      "id": 116,
+      "name": "ShieldMaiden",
+      "gender": "Female",
+      "phone": 3276428826
+    }
+  }]
+}
