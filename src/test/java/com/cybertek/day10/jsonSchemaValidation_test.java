@@ -2,6 +2,7 @@ package com.cybertek.day10;
 
 import com.cybertek.utilities.Spartan_AuthTESTBase;
 import io.restassured.http.ContentType;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -20,9 +21,15 @@ public class jsonSchemaValidation_test extends Spartan_AuthTESTBase {
                 .when()
                 .get("/api/spartans/{id}")
                 .then()
-                .statusCode(200).log().all();
+                .statusCode(200)
         //How to verify the response we get against the schema in the resources file
-        //RESPONSE VS. SCHEMA IN THE "RESOURCES" FILE
+        //RESPONSE VS. SCHEMA FILE IN THE "RESOURCES" DIRECTORY
+                //We are not going to call anything
+        //INSTEAD..
+        //we are going to directly send the file"SingleSpartanSchema"
+        //TO compare with the BODY!
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("SingleSpartanSchema.json"))
+                .log().all();
 
 
 
