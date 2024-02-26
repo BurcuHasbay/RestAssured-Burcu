@@ -1,5 +1,6 @@
 package com.cybertek.day10;
 
+import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -29,6 +30,17 @@ public class Formula1_xmlTEst {
                 .statusCode(200).log().all()
                 .extract().response();
 
+
+        XmlPath xmlPath = response.xmlPath();
+        //get given name
+        String givenName = xmlPath.getString("MRData.DriverTable.Driver.GivenName");
+        System.out.println(givenName);
+        //get familyName
+        String familyName = xmlPath.getString("MRData.DriverTable.Driver.FamilyName");
+        System.out.println(familyName);
+        //Get Driver id BUT id is not tagged, it's an attribute
+        String driverId = xmlPath.getString("MRData.DriverTable.Driver.@driverId");
+        System.out.println(driverId);
 
 
     }
