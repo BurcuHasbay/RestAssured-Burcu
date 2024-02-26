@@ -46,7 +46,9 @@
       "title": "The phone Schema",
       "examples": [
         3312820936
-      ]
+      ],
+      "minimum": 1000000000,
+      "maximum": 999999999999
     }
   },
   "examples": [
