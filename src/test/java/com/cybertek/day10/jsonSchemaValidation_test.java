@@ -20,7 +20,7 @@ public class jsonSchemaValidation_test extends Spartan_AuthTESTBase {
                 .when()
                 .get("/api/spartans/{id}")
                 .then()
-                .statusCode(200);
+                .statusCode(200).log().all();
 
 
 
