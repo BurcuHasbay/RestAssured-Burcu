@@ -37,8 +37,8 @@
       "title": "The gender Schema",
       "examples": [
         "Female"
-      ]
-
+      ],
+      "pattern": "^(Male|Female)$"
     },
     "phone": {
       "type": "integer",
