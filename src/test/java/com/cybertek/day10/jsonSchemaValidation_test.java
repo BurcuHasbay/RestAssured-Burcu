@@ -50,6 +50,7 @@ public class jsonSchemaValidation_test extends Spartan_AuthTESTBase {
                 .when().get("/api/spartans")
                 .then()
                 .statusCode(200)
+                //What if your .json file is not under "resources"? then follow the new way
                 .body(JsonSchemaValidator.matchesJsonSchema(new File("src/test/resources/GetAllSpartansSchema.json")));
                 //.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("GetAllSpartansSchema.json"))
 
