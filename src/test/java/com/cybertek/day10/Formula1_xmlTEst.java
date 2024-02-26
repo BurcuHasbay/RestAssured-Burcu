@@ -46,6 +46,7 @@ public class Formula1_xmlTEst {
         System.out.println(code);
         //Get url (it's an attribute)
         String uRl = xmlPath.getString("MRData.DriverTable.Driver.@url");
+        System.out.println("uRl = " + uRl);
 
 
     }
