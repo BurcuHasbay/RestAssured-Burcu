@@ -41,6 +41,11 @@ public class Formula1_xmlTEst {
         //Get Driver id BUT id is not tagged, it's an attribute
         String driverId = xmlPath.getString("MRData.DriverTable.Driver.@driverId");
         System.out.println(driverId);
+        //Get code (it's an attribute)
+        String code = xmlPath.getString("MRData.DriverTable.Driver.@code");
+        System.out.println(code);
+        //Get url (it's an attribute)
+        String uRl = xmlPath.getString("MRData.DriverTable.Driver.@url");
 
 
     }
