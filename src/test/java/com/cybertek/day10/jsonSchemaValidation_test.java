@@ -1,5 +1,6 @@
 package com.cybertek.day10;
 
+import com.cybertek.utilities.Spartan_AuthTESTBase;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
-public class jsonSchemaValidation_test {
+public class jsonSchemaValidation_test extends Spartan_AuthTESTBase {
 
     @DisplayName("GET request to /api/spartans/{id} to verify one Spartan against Schema")
     @Test
