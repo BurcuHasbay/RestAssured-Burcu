@@ -71,7 +71,9 @@
         "name": "ShieldMaiden",
         "gender": "Female",
         "phone": 3276428826
-      }]
+      }],
+      "minimum": 1000000000,
+      "maximum": 9999999999999
     }
   },
   "examples": [{
