@@ -15,7 +15,7 @@ public class jsonSchemaValidation_test {
 
         given().accept(ContentType.JSON)
                 .and().pathParam("id",10)
-                .auth().basic("adming","adming")
+                .auth().basic("adming","admin")
                 .when()
                 .get("/api/spartans/{id}")
                 .then()
