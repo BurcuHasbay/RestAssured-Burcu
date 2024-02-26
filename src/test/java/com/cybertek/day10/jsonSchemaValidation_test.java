@@ -21,6 +21,8 @@ public class jsonSchemaValidation_test extends Spartan_AuthTESTBase {
                 .get("/api/spartans/{id}")
                 .then()
                 .statusCode(200).log().all();
+        //How to verify the response we get against the schema in the resources file
+        //RESPONSE VS. SCHEMA IN THE "RESOURCES" FILE
 
 
 
