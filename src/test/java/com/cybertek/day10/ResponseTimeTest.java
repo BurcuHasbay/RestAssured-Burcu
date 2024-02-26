@@ -20,11 +20,15 @@ public class ResponseTimeTest extends Spartan_AuthTESTBase {
                 .auth().basic("admin", "admin")
                 .accept(ContentType.JSON)
                 .when()
-                .get("/api/spartans");
+                .get("/api/spartans")
+                        .then().time(lessThanOrEqualTo(2000L))
+                        .extract().response();
 
         //Get the Response inside the Response Object
 
         System.out.println("response.getTime() = " + response.getTime());
+
+        //HOW CAN YOU VERIFY THAT THIS AMOUNT OF TIME IS BETWEEN the RANGE OF ??
 
 
 
