@@ -60,18 +60,21 @@ public class CsvSource_ParametrizedTest {
         System.out.println("state = " + state);
         System.out.println("city = " + city);
 
-        given().baseUri("https://www.zippopotam.us").accept(ContentType.JSON)
+        int placeNumber
+                = given().baseUri("https://www.zippopotam.us").accept(ContentType.JSON)
                 .and().pathParam("state", state)
                 .pathParam("city", city)
                 .log().all()
                 .when().get("/us/{state}/{city}")
                 .then().statusCode(200)
-                .body("places.'place name'",everyItem(containsString(city)))
-                .log().all();
+                .body("places.'place name'", everyItem(containsString(city)))
+                .extract().jsonPath().getList("places").size();
 
         //Verify each (everyItem) place name that contains a city name
         //ABOVE! in body, we can use matchers
 
+        //Print number of places for each request
+        //ABOVE-needs arrayList-jsonPath().getList("places").size();
 
 
     }
