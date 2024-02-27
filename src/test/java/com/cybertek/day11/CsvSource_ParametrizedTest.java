@@ -1,5 +1,6 @@
 package com.cybertek.day11;
 
+import io.restassured.http.ContentType;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -33,5 +34,56 @@ public class CsvSource_ParametrizedTest {
 
 
     }
+
+    /*
+    Write a parametrized test for this request
+    Get https://www.zippopotam.us /us{state}/{city}
+    "NY, New York"
+    "CO, Denver",
+    "VA, Fairfax",
+    "MA, Boston",
+    "NY, New York
+    "MD Annapolis",
+
+    Verify a place name that contains a city name
+    Print number of places for each request
+
+     */
+
+    @ParameterizedTest
+    @CsvSource({"NY, New York",
+            "CO, Denver",
+            "VA, Fairfax",
+            "MA, Boston",
+            "NY, New York",
+            "MD, Annapolis"})
+    public void zipCodeMultiInputTest(String state,String city){
+        System.out.println("state = " + state);
+        System.out.println("city = " + city);
+
+        given().baseUri("https://www.zippopotam.us").accept(ContentType.JSON)
+                .and().pathParam("state",state)
+                .pathParam("city",city)
+                .log().all()
+                .when().get("/us/{state}/{city}")
+                .then().statusCode(200)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
