@@ -66,8 +66,7 @@ public class CsvSource_ParametrizedTest {
                 .pathParam("city",city)
                 .log().all()
                 .when().get("/us/{state}/{city}")
-                .then().statusCode(200)
-    }
+                .then().statusCode(200);
 
 
 
