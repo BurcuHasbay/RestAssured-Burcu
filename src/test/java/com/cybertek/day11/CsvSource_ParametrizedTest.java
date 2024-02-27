@@ -20,17 +20,16 @@ public class CsvSource_ParametrizedTest {
 
     @ParameterizedTest
     @CsvSource({"1, 3 , 4",
-                "2, 3 , 5",
-                "8, 7 , 15",
-                "10, 9 , 19"})
-    public void testAddition(int num1, int num2, int sum){
+            "2, 3 , 5",
+            "8, 7 , 15",
+            "10, 9 , 19"})
+    public void testAddition(int num1, int num2, int sum) {
 
         System.out.println("num1 = " + num1);
         System.out.println("num2 = " + num2);
         System.out.println("sum = " + sum);
 
-        assertThat(num1+num2,equalTo(sum));
-
+        assertThat(num1 + num2, equalTo(sum));
 
 
     }
@@ -57,32 +56,17 @@ public class CsvSource_ParametrizedTest {
             "MA, Boston",
             "NY, New York",
             "MD, Annapolis"})
-    public void zipCodeMultiInputTest(String state,String city){
+    public void zipCodeMultiInputTest(String state, String city) {
         System.out.println("state = " + state);
         System.out.println("city = " + city);
 
         given().baseUri("https://www.zippopotam.us").accept(ContentType.JSON)
-                .and().pathParam("state",state)
-                .pathParam("city",city)
+                .and().pathParam("state", state)
+                .pathParam("city", city)
                 .log().all()
                 .when().get("/us/{state}/{city}")
                 .then().statusCode(200);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 }
