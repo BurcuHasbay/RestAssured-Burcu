@@ -7,11 +7,13 @@ public class CsvFileSource_ParametrizedTest {
 
 @ParameterizedTest
     @CsvFileSource(resources = "/ZipCode.csv",numLinesToSkip = 1)
-    public void zipCodeTest_withFile(String stateArg, String cityArg, int zipCode){
+    public void zipCodeTest_withFile(String stateArg, String cityArg, int zipCountArg){
 
     System.out.println("stateArg = " + stateArg);
     System.out.println("cityArg = " + cityArg);
-    System.out.println("zipCode = " + zipCode);
+    System.out.println("zipCountArg = " + zipCountArg);
+
+    //send a request and verify place number matches with zipCount
 
 }
 
