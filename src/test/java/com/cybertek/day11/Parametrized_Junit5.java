@@ -41,7 +41,7 @@ public class Parametrized_Junit5 {
 
     /*
     Send a get request to  http://www.zippopotam.us 01000,02000,03000,04000,05000,06000,35000,63000,64000
-    with these zipcodes to Pathparam
+    with these zipcodes to Pathparam:postal-code
     Check status code 200
      */
 
