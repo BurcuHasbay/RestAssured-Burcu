@@ -65,7 +65,12 @@ public class CsvSource_ParametrizedTest {
                 .pathParam("city", city)
                 .log().all()
                 .when().get("/us/{state}/{city}")
-                .then().statusCode(200);
+                .then().statusCode(200)
+                .body("places.'place name'",everyItem(containsString(city)));
+
+        //Verify each (everyItem) place name that contains a city name
+        //ABOVE! in body, we can use matchers
+
 
 
     }
