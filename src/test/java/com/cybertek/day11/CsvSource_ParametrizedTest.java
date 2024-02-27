@@ -3,6 +3,9 @@ package com.cybertek.day11;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.*;
 
 public class CsvSource_ParametrizedTest {
 
@@ -24,6 +27,11 @@ public class CsvSource_ParametrizedTest {
         System.out.println("num1 = " + num1);
         System.out.println("num2 = " + num2);
         System.out.println("sum = " + sum);
+
+        assertThat(num1+num2,equalTo(sum));
+
+
+
     }
 
 }
