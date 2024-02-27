@@ -76,6 +76,8 @@ public class CsvSource_ParametrizedTest {
         //Print number of places for each request
         //ABOVE-needs arrayList-jsonPath().getList("places").size();
 
+        System.out.println("placeNumber = " + placeNumber);
+
 
     }
 }
