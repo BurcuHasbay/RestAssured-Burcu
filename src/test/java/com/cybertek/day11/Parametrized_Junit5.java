@@ -29,11 +29,11 @@ public class Parametrized_Junit5 {
 
 
     @ParameterizedTest
-    @ValueSource(ints = {01000,02000,03000,04000,05000,06000,35000,63000,64000})
-   public void testMultipleCities(int zipCode){
+    @ValueSource(ints = {22030,22031,22032})
+   public void testMultipleCities(int postalCode){
       given().baseUri("https://www.zippopotam.us")
-                .and().pathParam("zipcode", zipCode).log().all()
-                .when().get("/TR/{zipcode}")
+                .and().pathParam("postal-code", postalCode).log().all()
+                .when().get("/US/{postal-code}")
                 .then().statusCode(200);
 
 
