@@ -7,6 +7,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.List;
 import java.util.Map;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.*;
+
 public class BookitParametrized {
 
     public static List<Map<String,String>> getExcelData(){
