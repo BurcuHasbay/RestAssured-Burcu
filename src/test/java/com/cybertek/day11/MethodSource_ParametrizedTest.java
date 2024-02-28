@@ -1,10 +1,12 @@
 package com.cybertek.day11;
 
+import com.cybertek.utilities.ExcelUtil;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class MethodSource_ParametrizedTest {
 
@@ -28,6 +30,14 @@ public static List<String> getNames(){
     List<String> nameList = Arrays.asList("Burcu","Osman","Jiye","Ayşegül","Mehtap","Hürrem","Kont","Mansur");
     return nameList;
 
+}
+
+public static List<Map<String,String>> getExcelData(){
+
+     //Create Excel file Object
+    ExcelUtil vytravkFile = new ExcelUtil("src/test/resources/Vytracktestdata.xlsx","QA3-short");
+     //Return excel sheet as a list of Map
+    return vytravkFile.getDataList();
 }
 
 }
