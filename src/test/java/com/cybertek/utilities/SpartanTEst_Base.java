@@ -17,7 +17,7 @@ public abstract class SpartanTEst_Base {
         String dbUsername = "SP";
         String dbPassword = "SP";
         //TO CREATE CONNECTION TO DATABASE FOR SPARTAN
-        DBUtils.createConnection(dbUrl,dbUsername,dbPassword);
+      //  DBUtils.createConnection(dbUrl,dbUsername,dbPassword);
         //NOW THAT YOU OPENED THE CONNECTION
         //YOU NEED TO CLOSE IT AS WELL.
 
@@ -25,6 +25,6 @@ public abstract class SpartanTEst_Base {
 
     @AfterAll
     public static void teardown(){
-        DBUtils.destroy();
+     //   DBUtils.destroy();
     }
 }
