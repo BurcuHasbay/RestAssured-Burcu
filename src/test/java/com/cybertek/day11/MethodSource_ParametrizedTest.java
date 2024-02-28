@@ -40,4 +40,15 @@ public static List<Map<String,String>> getExcelData(){
     return vytravkFile.getDataList();
 }
 
+        @ParameterizedTest
+        @MethodSource("getExcelData")
+    public void excelParamTest(Map<String,String> userInfo){
+
+            System.out.println("FirstName: " +userInfo.get("firstname"));
+            System.out.println("LastName: " +userInfo.get("lastname"));
+
+
+        }
+
+
 }
