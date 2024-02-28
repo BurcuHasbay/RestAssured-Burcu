@@ -1,6 +1,7 @@
 package com.cybertek.day11;
 
 import com.cybertek.utilities.ExcelUtil;
+import io.restassured.http.ContentType;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -29,6 +30,15 @@ public class BookitParametrized {
 
     System.out.println("userInfo.get(\"email\") = " + userInfo.get("email"));
     System.out.println("userInfo.get(\"password\") = " + userInfo.get("password"));
+
+    given().accept(ContentType.JSON)
+            .and().baseUri("https://cybertek-reservation-api-qa3.herokuapp.com")
+            .queryParams(userInfo)
+            .get("/sign")
+            .then()
+            .statusCode(200)
+            .log().body();
+
 
 
 }
