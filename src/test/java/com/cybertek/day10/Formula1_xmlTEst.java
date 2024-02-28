@@ -31,7 +31,9 @@ public class Formula1_xmlTEst {
                 .extract().response();
 
 
+
         XmlPath xmlPath = response.xmlPath();
+        
         //get given name
         String givenName = xmlPath.getString("MRData.DriverTable.Driver.GivenName");
         System.out.println(givenName);
