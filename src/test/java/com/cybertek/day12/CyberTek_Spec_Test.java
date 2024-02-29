@@ -30,7 +30,7 @@ public class CyberTek_Spec_Test extends Cyber_Base {
     **/
     @Test
     public void test1(){
-
+/*
         RequestSpecification requestSpecification1 = given()
                 .accept(ContentType.JSON)
                 .and().log().all();
@@ -39,7 +39,7 @@ public class CyberTek_Spec_Test extends Cyber_Base {
                 .and()
                 .contentType("application/json;charset=UTF-8")
                         .logDetail(LogDetail.ALL);
-
+*/
         given().
                          spec(requestSpecification1)
                 .when()
@@ -57,15 +57,12 @@ public class CyberTek_Spec_Test extends Cyber_Base {
     public void test2(){
 
         given()
-                .accept(ContentType.JSON)
-                .and()
+                .spec(requestSpecification1)
                 .pathParam("id",4)
                 .when()
                 .get("/student/{id}")
                 .then()
-                .statusCode(200)
-                .and()
-                .contentType("application/json;charset=UTF-8");
+                .spec(responseSpecification1);
 
 
 
